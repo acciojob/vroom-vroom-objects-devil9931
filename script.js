@@ -12,6 +12,16 @@ function SportsCar(make, model, topSpeed) {
 	this.topSpeed = topSpeed;
 }
 
+SportsCar.prototype = Object.create(Car.prototype);
+
+// Fix constructor reference
+SportsCar.prototype.constructor = SportsCar;
+
+// Add method to SportsCar prototype
+SportsCar.prototype.getTopSpeed = function () {
+  return this.topSpeed;
+};
+
 // Do not change the code below
 window.Car = Car;
 window.SportsCar = SportsCar;
